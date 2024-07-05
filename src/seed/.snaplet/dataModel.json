@@ -50,15 +50,11 @@
       "uniqueConstraints": [
         {
           "name": "User_email_key",
-          "fields": [
-            "email"
-          ]
+          "fields": ["email"]
         },
         {
           "name": "User_pkey",
-          "fields": [
-            "id"
-          ]
+          "fields": ["id"]
         }
       ]
     },
@@ -174,9 +170,7 @@
       "uniqueConstraints": [
         {
           "name": "_prisma_migrations_pkey",
-          "fields": [
-            "id"
-          ]
+          "fields": ["id"]
         }
       ]
     }

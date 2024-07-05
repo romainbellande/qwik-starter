@@ -14,4 +14,31 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+  updatedAt DateTime @updatedAt @default(now())
+  createdAt DateTime @default(now())
+}
+
+model Board {
+  id    Int     @id @default(autoincrement())
+  name String
+  updatedAt DateTime @updatedAt @default(now())
+  createdAt DateTime @default(now())
+}
+
+model BoardList {
+  id    Int     @id @default(autoincrement())
+  name String
+  updatedAt DateTime @updatedAt @default(now())
+  createdAt DateTime @default(now())
+  tasks Task[]
+}
+
+model Task {
+  id    Int     @id @default(autoincrement())
+  name String
+  position String
+  updatedAt DateTime @updatedAt @default(now())
+  createdAt DateTime @default(now())
+  boardList  BoardList @relation(fields: [boardListId], references: [id])
+  boardListId Int
 }

@@ -12,7 +12,6 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         clientSecret: env.get("AUTH_CLIENT_SECRET"),
         issuer: env.get("AUTH_ISSUER"),
         authorization: env.get("AUTH_AUTHORIZATION"),
-        
-      })
+      }),
     ] as Provider[],
   }));

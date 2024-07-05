@@ -13,7 +13,12 @@ const main = async () => {
   await seed.$resetDatabase();
 
   // Seed the database with 10 user
-  await seed.user((x) => x(10));
+  await seed.user((x) =>
+    x(10, ({ index }) => ({
+      email: `user-${index}@example.com`,
+      name: `User ${index}`,
+    })),
+  );
 
   // Type completion not working? You might want to reload your TypeScript Server to pick up the changes
 
